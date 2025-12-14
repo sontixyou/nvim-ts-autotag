@@ -104,7 +104,7 @@ local function find_parent_match(opts)
         while cur_node ~= nil do
             local node_type = cur_node:type()
             if is_in_table(skip_tag_pattern, node_type) then
-                return nil
+                break
             end
             if node_type ~= nil and node_type == ptn then
                 return cur_node
