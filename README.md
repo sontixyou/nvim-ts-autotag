@@ -114,10 +114,3 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 ```
-## Contributors
-Thank [@PriceHiller](https://github.com/PriceHiller) for his work on this plugin.
-
-## Sponsor
-If you find this plugin useful, please consider sponsoring the project.
-
-[Sponsor](https://paypal.me/trieule1vn)
