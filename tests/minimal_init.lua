@@ -46,37 +46,37 @@ end
 
 function M.setup_treesitter()
     print("[TREESITTER] Setting up nvim-treesitter")
-    local parser_cfgs = require("nvim-treesitter.parsers").get_parser_configs()
-    for parser_name, parser_cfg in pairs({
-        rescript = {
-            install_info = {
-                url = "https://github.com/rescript-lang/tree-sitter-rescript",
-                branch = "main",
-                files = { "src/parser.c" },
-                generate_requires_npm = false,
-                requires_generate_from_grammar = true,
-                use_makefile = true,
-            },
-        },
-    }) do
-        parser_cfgs[parser_name] = parser_cfg
+    -- Install required parsers using nvim-treesitter's async install API
+    local parsers_to_install = {
+        "html",
+        "javascript",
+        "typescript",
+        "svelte",
+        "vue",
+        "tsx",
+        "php",
+        "glimmer",
+        "rescript",
+        "templ",
+        "embedded_template",
+    }
+
+    local install = require("nvim-treesitter.install")
+    local async = require("nvim-treesitter.async")
+
+    -- Call the async install function and wait for it
+    local task = install.install(parsers_to_install, { summary = true })
+    if task and task.await then
+        -- New async API
+        local done = false
+        task:await(function()
+            done = true
+        end)
+        vim.wait(120000, function()
+            return done
+        end, 100)
     end
-    require("nvim-treesitter.configs").setup({
-        sync_install = true,
-        ensure_installed = {
-            "html",
-            "javascript",
-            "typescript",
-            "svelte",
-            "vue",
-            "tsx",
-            "php",
-            "glimmer",
-            "rescript",
-            "templ",
-            "embedded_template",
-        },
-    })
+
     print("[TREESITTER] Done setting up nvim-treesitter")
 end
 
