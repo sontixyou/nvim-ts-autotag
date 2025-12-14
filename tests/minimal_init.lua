@@ -51,8 +51,6 @@ function M.setup_treesitter()
         "html",
         "typescript",
         "tsx",
-        "php",
-        "glimmer",
         "embedded_template",
     }
 
