@@ -119,7 +119,6 @@ local Setup = {
     opts = Opts,
     aliases = {
         ["markdown"] = "html",
-        ["php"] = "html",
         ["twig"] = "html",
         ["blade"] = "html",
         ["javascriptreact"] = "typescriptreact",
