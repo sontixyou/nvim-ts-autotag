@@ -6,23 +6,11 @@ Use treesitter to **autoclose** and **autorename** html tag
 
 It works with:
 
-- astro
-- glimmer
-- handlebars
 - html
-- javascript
-- jsx
-- liquid
 - markdown
-- php
-- rescript
-- svelte
 - tsx
-- twig
 - typescript
 - xml
-
-and more
 
 ## Usage
 
