@@ -139,7 +139,6 @@ local Opts = {
 local Setup = {
     opts = Opts,
     aliases = {
-        ["astro"] = "html",
         ["htmldjango"] = "html",
         ["markdown"] = "html",
         ["php"] = "html",
