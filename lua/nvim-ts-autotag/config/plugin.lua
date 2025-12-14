@@ -67,17 +67,6 @@ local function setup_tag_configs()
         },
     }))
 
-    TagConfigs:add(base_cfg:extend("svelte", {
-        start_tag_pattern = { "start_tag" },
-        start_name_tag_pattern = { "tag_name" },
-        end_tag_pattern = { "end_tag" },
-        end_name_tag_pattern = { "tag_name" },
-        close_tag_pattern = { "erroneous_end_tag" },
-        close_name_tag_pattern = { "erroneous_end_tag_name" },
-        element_tag = { "element" },
-        skip_tag_pattern = { "quoted_attribute_value", "end_tag" },
-    }))
-
     TagConfigs:add(base_cfg:extend("rust", {
         start_tag_pattern = { "open_tag" },
         start_name_tag_pattern = { "node_identifier" },
