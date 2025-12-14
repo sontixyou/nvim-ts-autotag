@@ -49,7 +49,6 @@ function M.setup_treesitter()
     -- Install required parsers using nvim-treesitter's async install API
     local parsers_to_install = {
         "html",
-        "javascript",
         "typescript",
         "svelte",
         "tsx",
@@ -75,8 +74,7 @@ function M.setup_treesitter()
     end
 
     -- Register language mappings for filetypes that differ from parser names
-    vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact", "javascript.jsx", "typescript.tsx" })
-    vim.treesitter.language.register("javascript", { "javascript" })
+    vim.treesitter.language.register("tsx", { "typescriptreact", "typescript.tsx" })
     vim.treesitter.language.register("typescript", { "typescript" })
     print("[TREESITTER] Done setting up nvim-treesitter")
 end
