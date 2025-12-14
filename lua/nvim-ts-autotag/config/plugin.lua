@@ -125,7 +125,6 @@ local Setup = {
         ["typescript.tsx"] = "typescriptreact",
         ["javascript"] = "typescriptreact",
         ["typescript"] = "typescriptreact",
-        ["rescript"] = "typescriptreact",
         ["rust"] = "rust",
     },
     per_filetype = {},
