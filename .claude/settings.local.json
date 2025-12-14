@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)",
+      "Bash(cat:*)",
+      "Bash(git restore:*)",
+      "Bash(make test:*)",
+      "Bash(git reset:*)",
+      "Bash(pinact run:*)",
+      "Bash(pinact init:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(gh run view:*)",
+      "Bash(git pull:*)"
+    ]
+  }
+}
