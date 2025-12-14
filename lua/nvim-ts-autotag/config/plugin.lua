@@ -128,8 +128,6 @@ local Setup = {
         ["javascript"] = "typescriptreact",
         ["typescript"] = "typescriptreact",
         ["rescript"] = "typescriptreact",
-        ["handlebars"] = "glimmer",
-        ["hbs"] = "glimmer",
         ["rust"] = "rust",
     },
     per_filetype = {},
