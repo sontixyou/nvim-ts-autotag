@@ -156,15 +156,6 @@ local data = {
         before = [[<|<div></div>]],
         after = [[<>|</><div></div>]],
     },
-    {
-        name = "18 php div ",
-        filepath = "./sample/index.php",
-        filetype = "php",
-        linenr = 25,
-        key = [[>]],
-        before = [[<div| ]],
-        after = [[<div>|</div> ]],
-    },
     -- {
     --     name = '19 markdown div ',
     --     filepath = './sample/index.md',

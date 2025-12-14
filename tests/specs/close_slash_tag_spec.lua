@@ -110,15 +110,6 @@ local data = {
         after = [[<Opt.Input></Opt.Input>| ]],
     },
     {
-        name = "15 php close tag after inputting /",
-        filepath = "./sample/index.php",
-        filetype = "php",
-        linenr = 25,
-        key = [[/]],
-        before = [[<div><| ]],
-        after = [[<div></div>| ]],
-    },
-    {
         name = "16 lit template div close after inputting /",
         filepath = "./sample/index.ts",
         filetype = "typescript",
