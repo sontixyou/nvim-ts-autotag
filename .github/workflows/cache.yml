@@ -1,23 +1,23 @@
-name: Tests
+name: Cache
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
     paths:
       - '**/*.lua'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - '.github/workflows/cache.yml'
 
 jobs:
-  x64-ubuntu:
-    name: X64-ubuntu
+  create-cache:
+    name: Create cache
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - run: date +%F > todays-date
-      - name: Restore cache for today's nightly.
+
+      - name: Cache Neovim
         uses: actions/cache@v3
         with:
           path: _neovim
@@ -33,23 +33,15 @@ jobs:
             ~/.cargo/git/db/
           key: ${{ runner.os }}-cargo-tree-sitter-cli
 
-      - name: Install tree-sitter-cli
+      - name: Install Neovim
         run: |
-          if ! command -v tree-sitter &> /dev/null; then
-            cargo install tree-sitter-cli
-          fi
-
-      - name: Prepare
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fd-find
           test -d _neovim || {
             mkdir -p _neovim
             curl -sL https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
           }
 
-      - name: Run tests
+      - name: Install tree-sitter-cli
         run: |
-          export PATH="${PWD}/_neovim/bin:${PATH}"
-          export VIMRUNTIME="${PWD}/_neovim/share/nvim/runtime"
-          make test
+          if ! command -v tree-sitter &> /dev/null; then
+            cargo install tree-sitter-cli
+          fi
