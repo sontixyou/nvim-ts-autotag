@@ -1,5 +1,7 @@
 # nvim-ts-autotag
 
+> Forked from [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+
 Use treesitter to **autoclose** and **autorename** html tag
 
 It works with:
