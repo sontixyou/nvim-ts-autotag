@@ -77,6 +77,12 @@ function M.setup_treesitter()
         end, 100)
     end
 
+    -- Register language mappings for filetypes that differ from parser names
+    vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact", "javascript.jsx", "typescript.tsx" })
+    vim.treesitter.language.register("javascript", { "javascript" })
+    vim.treesitter.language.register("typescript", { "typescript" })
+    vim.treesitter.language.register("embedded_template", { "eruby" })
+
     print("[TREESITTER] Done setting up nvim-treesitter")
 end
 
