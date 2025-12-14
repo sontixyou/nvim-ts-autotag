@@ -67,17 +67,6 @@ local function setup_tag_configs()
         },
     }))
 
-    TagConfigs:add(base_cfg:extend("glimmer", {
-        start_tag_pattern = { "element_node_start" },
-        start_name_tag_pattern = { "tag_name" },
-        end_tag_pattern = { "element_node_end" },
-        end_name_tag_pattern = { "tag_name" },
-        close_tag_pattern = { "element_node_end" },
-        close_name_tag_pattern = { "tag_name" },
-        element_tag = { "element_node" },
-        skip_tag_pattern = { "element_node_end", "attribute_node", "concat_statement" },
-    }))
-
     TagConfigs:add(base_cfg:extend("svelte", {
         start_tag_pattern = { "start_tag" },
         start_name_tag_pattern = { "tag_name" },
@@ -119,7 +108,6 @@ local Setup = {
     opts = Opts,
     aliases = {
         ["markdown"] = "html",
-        ["blade"] = "html",
         ["typescript.tsx"] = "typescriptreact",
         ["typescript"] = "typescriptreact",
         ["rust"] = "rust",
