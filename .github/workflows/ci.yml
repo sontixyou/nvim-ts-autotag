@@ -6,14 +6,6 @@ jobs:
   x64-ubuntu:
     name: X64-ubuntu
     runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: ubuntu-24.04
-            url: https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
-            manager: sudo apt-get
-            packages: -y fd-find tree-sitter-cli
     steps:
       - uses: actions/checkout@v3
       - run: date +%F > todays-date
@@ -21,15 +13,15 @@ jobs:
         uses: actions/cache@v3
         with:
           path: _neovim
-          key: ${{ runner.os }}-${{ matrix.url }}-${{ hashFiles('todays-date') }}
+          key: ${{ runner.os }}-v0.10.0-${{ hashFiles('todays-date') }}
 
       - name: Prepare
         run: |
-          ${{ matrix.manager }} update
-          ${{ matrix.manager }} install ${{ matrix.packages }}
+          sudo apt-get update
+          sudo apt-get install -y fd-find tree-sitter-cli
           test -d _neovim || {
             mkdir -p _neovim
-            curl -sL ${{ matrix.url }} | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
+            curl -sL https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
           }
 
       - name: Run tests
