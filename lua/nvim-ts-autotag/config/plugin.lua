@@ -118,7 +118,6 @@ local Opts = {
 local Setup = {
     opts = Opts,
     aliases = {
-        ["htmldjango"] = "html",
         ["markdown"] = "html",
         ["php"] = "html",
         ["twig"] = "html",
