@@ -142,7 +142,6 @@ local Setup = {
         ["astro"] = "html",
         ["liquid"] = "html",
         ["vue"] = "html",
-        ["htmlangular"] = "html",
         ["htmldjango"] = "html",
         ["markdown"] = "html",
         ["php"] = "html",
