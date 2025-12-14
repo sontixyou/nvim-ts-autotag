@@ -43,16 +43,6 @@ local function setup_tag_configs()
         end_tag_pattern = { "ETag" },
     }))
 
-    -- Support Elixir HEEX files.
-    -- HEEX is simply HTML with the addition of the <.component></.component> syntax.
-    TagConfigs:add(html_tag_cfg:extend("heex", {
-        start_tag_pattern = { "start_component" },
-        start_name_tag_pattern = { "component_name" },
-        end_tag_pattern = { "end_component" },
-        end_name_tag_pattern = { "component_name" },
-        skip_tag_pattern = { "end_component" },
-    }))
-
     TagConfigs:add(base_cfg:extend("typescriptreact", {
         start_tag_pattern = { "jsx_opening_element", "start_tag" },
         start_name_tag_pattern = {
@@ -133,7 +123,6 @@ local Setup = {
         ["php"] = "html",
         ["twig"] = "html",
         ["blade"] = "html",
-        ["elixir"] = "heex",
         ["javascriptreact"] = "typescriptreact",
         ["javascript.jsx"] = "typescriptreact",
         ["typescript.tsx"] = "typescriptreact",
