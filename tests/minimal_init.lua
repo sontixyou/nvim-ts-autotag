@@ -52,7 +52,6 @@ function M.setup_treesitter()
         "javascript",
         "typescript",
         "svelte",
-        "vue",
         "tsx",
         "php",
         "glimmer",
