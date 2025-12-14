@@ -50,7 +50,6 @@ function M.setup_treesitter()
     local parsers_to_install = {
         "html",
         "typescript",
-        "svelte",
         "tsx",
         "php",
         "glimmer",
