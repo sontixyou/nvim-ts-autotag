@@ -141,7 +141,6 @@ local Setup = {
     aliases = {
         ["astro"] = "html",
         ["liquid"] = "html",
-        ["vue"] = "html",
         ["htmldjango"] = "html",
         ["markdown"] = "html",
         ["php"] = "html",
