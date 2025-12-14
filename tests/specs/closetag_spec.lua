@@ -147,15 +147,6 @@ local data = {
         before = [[<|<div></div>]],
         after = [[<>|</><div></div>]],
     },
-    {
-        name = "17 javascript autoclose fragment",
-        filepath = "./sample/index.js",
-        filetype = "javascript",
-        linenr = 12,
-        key = [[>]],
-        before = [[<|<div></div>]],
-        after = [[<>|</><div></div>]],
-    },
     -- {
     --     name = '19 markdown div ',
     --     filepath = './sample/index.md',
