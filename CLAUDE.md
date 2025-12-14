@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 nvim-ts-autotag is a Neovim plugin that uses Treesitter to automatically close and rename HTML/XML tags. It supports multiple filetypes including HTML, JSX/TSX, Vue, Svelte, and more.
 
+**Requirements**: Neovim 0.11.5+ with Treesitter parsers installed for supported filetypes.
+
 ## Development Commands
 
 ```bash
