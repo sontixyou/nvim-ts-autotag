@@ -99,17 +99,6 @@ local function setup_tag_configs()
         skip_tag_pattern = { "quoted_attribute_value", "end_tag" },
     }))
 
-    TagConfigs:add(base_cfg:extend("templ", {
-        start_tag_pattern = { "tag_start" },
-        start_name_tag_pattern = { "element_identifier", "name" },
-        end_tag_pattern = { "tag_end" },
-        end_name_tag_pattern = { "element_identifier", "name" },
-        close_tag_pattern = { "tag_end" },
-        close_name_tag_pattern = { "element_identifier", "name" },
-        element_tag = { "element" },
-        skip_tag_pattern = { "quoted_attribute_value", "tag_end", "attribute", "value" },
-    }))
-
     TagConfigs:add(base_cfg:extend("rust", {
         start_tag_pattern = { "open_tag" },
         start_name_tag_pattern = { "node_identifier" },

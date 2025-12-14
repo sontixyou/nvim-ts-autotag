@@ -127,42 +127,6 @@ local data = {
         before = [[<div><| ]],
         after = [[<div></div>| ]],
     },
-    {
-        name = "17 templ close tag after inputting /",
-        filepath = "./sample/index.templ",
-        filetype = "templ",
-        linenr = 10,
-        key = [[/]],
-        before = [[<div><| ]],
-        after = [[<div></div>|]],
-    },
-    {
-        name = "20 templ close tag after inputting /",
-        filepath = "./sample/index.templ",
-        filetype = "templ",
-        linenr = 10,
-        key = [[/]],
-        before = [[<div clas="laa"><| ]],
-        after = [[<div clas="laa"></div>|]],
-    },
-    {
-        name = "21 templ don't close tag when no opening tag is found",
-        filepath = "./sample/index.templ",
-        filetype = "templ",
-        linenr = 10,
-        key = [[/>]],
-        before = [[<div><|</div> ]],
-        after = [[<div></>|</div>]],
-    },
-    {
-        name = "22 templ not close inside quote",
-        filepath = "./sample/index.templ",
-        filetype = "templ",
-        linenr = 10,
-        key = [[/]],
-        before = [[<div class="aa|"> </div>  ]],
-        after = [[<div class="aa/|"> </div>  ]],
-    },
 }
 
 local autotag = require("nvim-ts-autotag")
