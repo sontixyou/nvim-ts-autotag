@@ -20,7 +20,6 @@ It works with:
 - tsx
 - twig
 - typescript
-- vue
 - xml
 
 and more
