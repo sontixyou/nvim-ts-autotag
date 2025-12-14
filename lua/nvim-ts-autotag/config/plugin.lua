@@ -120,7 +120,6 @@ local Setup = {
     aliases = {
         ["markdown"] = "html",
         ["php"] = "html",
-        ["twig"] = "html",
         ["blade"] = "html",
         ["javascriptreact"] = "typescriptreact",
         ["javascript.jsx"] = "typescriptreact",
